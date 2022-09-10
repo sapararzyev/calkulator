@@ -1,30 +1,40 @@
 package com.example.calkulator;
-
 import static com.example.calkulator.R.layout.activity_main;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.annotation.SuppressLint;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
-
-
 public class MainActivity extends AppCompatActivity {
     private TextView textView;
     private Integer first, second;
     private boolean isOperationClick = false;
-    private String operation = "";
+    private String operation ="";
     private Integer result;
     private String operationSelected;
-
+    private Button button;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(activity_main);
         textView = findViewById(R.id.text_view);
+        button = findViewById(R.id.btn_next);
+        findViewById(R.id.btn_next).setOnClickListener(new View.OnClickListener() {
+            @SuppressLint("SetTextI18n")
+            @Override
+            public void onClick (View view){
+                Intent intent = new Intent(MainActivity.this, home_workActivity2.class);
+                String text = result.toString();
+                intent.putExtra("jon",text);
+                startActivity(intent);
+                finish();
+            }
+        });
     }
-
     @SuppressLint("NonConstantResourceId")
     public void OnNamberClik(View view) {
         switch (view.getId()) {
@@ -110,6 +120,7 @@ public class MainActivity extends AppCompatActivity {
                 break;
         }
     }
+    @SuppressLint("Range")
     public void OnRovnoClik(View view) {
        switch (view.getId()){
             case R.id.btn_plus:
@@ -133,6 +144,7 @@ public class MainActivity extends AppCompatActivity {
                 isOperationClick = true;
                 break;
             case R.id.btn_equls:
+                button.animate().alpha(100);
                 second =Integer.valueOf( textView.getText().toString());
                 switch (operationSelected){
                case "+":
@@ -160,6 +172,3 @@ public class MainActivity extends AppCompatActivity {
     }
 
 }
-
-
-

@@ -19,4 +19,10 @@
     <string name="plus">+</string>
     <string name="equals">=</string>
     <string name="dot">.</string>
+    <string name="EditText1">Policy</string>
+    <string name="EditText2">Product Category</string>
+    <string name="EditText3">Origin Country</string>
+    <string name="EditText4">Brend</string>
+    <string name="TextView1">Policies</string>
+    <string name="Button">Export as CSV</string>
 </resources>

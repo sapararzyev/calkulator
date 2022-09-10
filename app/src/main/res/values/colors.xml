@@ -10,5 +10,6 @@
     <color name="grey">#818181</color>
     <color name="orange">#FF6D00</color>
     <color name="grey_dark">#313131</color>
-
+    <color name="ret">#D60000</color>
+    <color name="fff">#164072</color>
 </resources>
